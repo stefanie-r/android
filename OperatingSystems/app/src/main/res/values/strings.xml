@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Operating Systems</string>
+    <string-array name="operatingSystems">
+        <item>Android</item>
+        <item>iPhone</item>
+        <item>WindowsMobile</item>
+        <item>Blackberry</item>
+        <item>WesOS</item>
+        <item>Ubuntu</item>
+        <item>Windows 7</item>
+        <item>Max OS X</item>
+        <item>Linux</item>
+        <item>OS/2</item>
+    </string-array>
+</resources>

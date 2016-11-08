@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Master-detail fragments</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string-array name="persons">
+        <item>Jan Jansen</item>
+        <item>Pieter Pieters</item>
+        <item>Peter Peeters</item>
+        <item>An Liekens</item>
+    </string-array>
+</resources>

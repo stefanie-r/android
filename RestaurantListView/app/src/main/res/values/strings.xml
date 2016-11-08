@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RestaurantListView</string>
+    <array name="days">
+        <item>Maandag</item>
+        <item>Dinsdag</item>
+        <item>Woensdag</item>
+        <item>Donderdag</item>
+        <item>Vrijdag</item>
+    </array>
+    <array name="weken">
+        <item>"07-11 okt 2013</item>
+        <item>14-18 okt 2013</item>
+        <item>21-25 okt 2013</item>
+    </array>
+</resources>
