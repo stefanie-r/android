@@ -103,8 +103,8 @@
         android:layout_toLeftOf="@id/editTextEmail"
         android:text="@string/Email" />
 
-    <RadioButton
-        android:id="@+id/radioButton"
+    <CheckBox
+        android:id="@+id/cbNewsletter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextEmail"
@@ -116,7 +116,7 @@
         android:id="@+id/fakeView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_below="@id/radioButton"
+        android:layout_below="@id/cbNewsletter"
         android:layout_centerInParent="true" />
 
     <Button
@@ -124,8 +124,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/fakeView"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/radioButton"
+        android:layout_below="@id/cbNewsletter"
         android:layout_weight="1"
+        android:id="@+id/CancelBtn"
         android:text="@string/Cancel" />
 
     <Button
@@ -133,6 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@id/fakeView"
-        android:layout_below="@id/radioButton"
+        android:id="@+id/SaveBtn"
+        android:layout_below="@id/cbNewsletter"
         android:text="@string/Save" />
 </RelativeLayout>
