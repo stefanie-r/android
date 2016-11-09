@@ -8,6 +8,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:authorities="com.example.stefanie.condiments.FoodProvider"
+            android:name="com.example.stefanie.condiments.FoodProvider"
+            android:multiprocess="true"
+
+            ></provider>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

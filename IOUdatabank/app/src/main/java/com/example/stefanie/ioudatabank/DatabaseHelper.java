@@ -5,7 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.provider.BaseColumns;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,32 +84,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Getting All Contacts
-    public List<DatabaseContract> getAllContracts() {
-        List<DatabaseContract> contactList = new ArrayList<>();
-        // Select All Query
-        String selectQuery = "SELECT  * FROM " + TABLE_NAME;
+    public Cursor getContracts(String id, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        SQLiteQueryBuilder sqliteQueryBuilder = new SQLiteQueryBuilder();
+        sqliteQueryBuilder.setTables(TABLE_NAME);
 
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
-
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                DatabaseContract contract = new DatabaseContract();
-                contract.setId(Integer.parseInt(cursor.getString(0)));
-                contract.setAmount(Integer.parseInt(cursor.getString(1)));
-                contract.setOwedTo(cursor.getString(2));
-                contract.setOwedBy(cursor.getString(3));
-                contract.setContext(cursor.getString(4));
-                // Adding contact to list
-                contactList.add(contract);
-            } while (cursor.moveToNext());
+        if(id != null) {
+            sqliteQueryBuilder.appendWhere(COLUMN_ID + " = " + id);
         }
-        // return contact list
-        return contactList;
-    }
 
-   // Deleting single contact
+        if(sortOrder == null || sortOrder == "") {
+            sortOrder = COLUMN_ID;
+        }
+        Cursor cursor = sqliteQueryBuilder.query(getReadableDatabase(),
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                sortOrder);
+        return cursor;
+    }
+    // Deleting single contact
     public void deleteContact(DatabaseContract contact) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME, COLUMN_ID + " = ?",

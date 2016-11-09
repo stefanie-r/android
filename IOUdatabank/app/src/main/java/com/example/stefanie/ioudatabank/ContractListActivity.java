@@ -1,5 +1,7 @@
 package com.example.stefanie.ioudatabank;
 
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
@@ -17,10 +19,13 @@ import java.util.List;
  */
 
 public class ContractListActivity extends AppCompatActivity {
+    private final String PROVIDER_NAME =  "IOU.provider";
+    private final Uri CONTENT_URI = Uri.parse("content://" + PROVIDER_NAME + "/contracts");
+
     public static DatabaseHelper databaseHelper;
     private static ListView listView;
     private ContractListAdapter adapter;
-    private List<DatabaseContract> list;
+    private ArrayList<DatabaseContract> list;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +39,12 @@ public class ContractListActivity extends AppCompatActivity {
     }
 
     private void UpdateList() {
-        list = databaseHelper.getAllContracts();
+        Cursor cursor = databaseHelper.getContracts(null,null, null, null, null);
+        list = new ArrayList<>();
+        while (cursor.moveToNext()) {
+            DatabaseContract c = new DatabaseContract(cursor.getInt(0), cursor.getDouble(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+            list.add(c);
+        }
     }
 
     @Override
