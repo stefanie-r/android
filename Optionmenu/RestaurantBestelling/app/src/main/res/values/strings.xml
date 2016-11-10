@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Restaurant Bestelling</string>
+    <string name="dag">Vrijdag</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_bestellen">Bestellen</string>
+    <string name="action_annuleren">Annuleren</string>
+    <string name="action_settings">Settings</string>
+    <string name="soep">Soep</string>
+    <string name="soepIngevuld">Tomatensoep</string>
+    <string name="dagschotel">Dagschotel</string>
+    <string name="dagschotelIngevuld">Kipfilet</string>
+    <string name="pasta">Pasta</string>
+    <string name="pastaIngevuld">Lasagne</string>
+    <string name="vegetarisch">Vegetarisch</string>
+    <string name="vegetarischIngevuld">Vegetarische Wrap</string>
+    <string name="saladebar">Saladebar</string>
+    <string name="saladebarIngevuld">klein/groot met vis of vlees</string>
+    <string name="snack">Snack</string>
+    <string name="snackIngevuld">naar keuze</string>
+    <string name="dessert">Dessert</string>
+    <string name="dessertIngevuld">Naar Keuze</string>
+
+</resources>
