@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eerste"
+        android:id="@+id/week" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/maandag"
+        android:onClick="onClick"
+        android:id="@+id/buttonMaan" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Dinsdag"
+        android:onClick="onClick"
+        android:id="@+id/buttonDins" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Woensdag"
+        android:onClick="onClick"
+        android:id="@+id/buttonWoen" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/donderdag"
+        android:onClick="onClick"
+        android:id="@+id/buttonDond" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/vrijdag"
+        android:onClick="onClick"
+        android:id="@+id/buttonVrijd" />
+</LinearLayout>

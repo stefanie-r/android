@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">checked restaurant</string>
+    <string-array name="dishes">
+        <item>Soep</item>
+        <item>Dagschotel</item>
+        <item>Pasta</item>
+        <item>Vegetarisch</item>
+        <item>Snack</item>
+        <item>Saladebar</item>
+        <item>Dessert</item>
+    </string-array>
+    <string-array name="dishname">
+        <item>TomatenSoep</item>
+        <item>fish and chips</item>
+        <item>Pasta carbonara</item>
+        <item>chili sin carne</item>
+        <item>worstebroodje</item>
+        <item>koude schotel</item>
+        <item>roomijs</item>
+    </string-array>
+</resources>

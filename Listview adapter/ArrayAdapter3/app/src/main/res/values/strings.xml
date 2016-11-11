@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ArrayAdapter 3</string>
+    <string-array name="operating_sysems">
+        <item>Android</item>
+        <item>iPhone</item>
+        <item>WindowsMobile</item>
+        <item>Blackberry</item>
+        <item>WebOS</item>
+        <item>Ubuntu</item>
+        <item>Windows7</item>
+        <item>Mac OS X</item>
+        <item>Linux</item>
+        <item>OS/2</item>
+    </string-array>
+</resources>

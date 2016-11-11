@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/optionEngland"
+        android:title="@string/english_royals" />
+    <item android:id="@+id/optionFrench"
+        android:title="@string/french_royals" />
+</menu>

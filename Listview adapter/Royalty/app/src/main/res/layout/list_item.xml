@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="8"
+    android:id="@+id/linLayoutSimpleListItem"
+    android:gravity="center_vertical|center_horizontal">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:paddingLeft="6dip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/textColor"
+        android:layout_weight="6"
+        android:text="@string/english_royals"/>
+    </LinearLayout>
