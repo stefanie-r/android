@@ -1,11 +1,18 @@
 package com.example.android.ilfragmentino;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity
+public class MainActivity extends AppCompatActivity
 implements WeeksFragment.OnWeekSelectedListener, DaysFragment.OnDaySelectedListener{
 
     @Override
@@ -20,6 +27,27 @@ implements WeeksFragment.OnWeekSelectedListener, DaysFragment.OnDaySelectedListe
            firstFragment.setArguments(getIntent().getExtras());
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, firstFragment).commit();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.AddOption:
+                return false;
+            case R.id.DeleteOption:
+                Toast.makeText(getApplicationContext(), "Deleteoption selected", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                break;
+        }
+        return false;
     }
 
     public void onWeekSelected(String week){

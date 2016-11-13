@@ -5,12 +5,17 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * Created by stefanie on 4/10/2016.
@@ -25,6 +30,21 @@ OnWeekSelectedListener mListener;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    setHasOptionsMenu(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.AddOption:
+                Toast.makeText(getContext(), "Deleteoption selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.DeleteOption:
+                return false;
+            default:
+                break;
+        }
+        return false;
     }
 
     @Nullable

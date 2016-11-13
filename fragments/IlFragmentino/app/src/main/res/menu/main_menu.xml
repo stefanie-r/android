@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <item
+        android:title="Delete"
+        android:id="@+id/DeleteOption"
+        android:orderInCategory="1"/>
+    <item
+        android:title="Add"
+        android:id="@+id/AddOption"
+        android:orderInCategory="2"/>
+</menu>
