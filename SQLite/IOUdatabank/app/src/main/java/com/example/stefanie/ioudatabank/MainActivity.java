@@ -1,6 +1,10 @@
 package com.example.stefanie.ioudatabank;
 
+import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,13 +16,23 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import static com.example.stefanie.ioudatabank.DatabaseHelper.COLUMN_AMOUNT;
+import static com.example.stefanie.ioudatabank.DatabaseHelper.COLUMN_CONTEXT;
+import static com.example.stefanie.ioudatabank.DatabaseHelper.COLUMN_OWED_BY;
+import static com.example.stefanie.ioudatabank.DatabaseHelper.COLUMN_OWED_TO;
+import static com.example.stefanie.ioudatabank.DatabaseHelper.TABLE_NAME;
 import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String AUTHORITY = "com.example.stefanie.ioudatabank";
     private static EditText et_amount;
     private static Spinner sp_owedto;
     private static Spinner sp_owedby;
     private static EditText et_context;
+    double amount;
+    String owedTo;
+    String owedBy;
+    String context;
     private static Button bt_add;
     public static DatabaseHelper databaseHelper;
 
@@ -37,15 +51,29 @@ public class MainActivity extends AppCompatActivity {
 
     final View.OnClickListener add_Contract = new View.OnClickListener() {
         public void onClick(final View v) {
-            double amount = Double.parseDouble(et_amount.getText().toString());
-            String owedTo = sp_owedto.getSelectedItem().toString();
-            String owedBy = sp_owedby.getSelectedItem().toString();
-            String context = et_context.getText().toString();
-            DatabaseContract contract = new DatabaseContract(context, amount,owedTo, owedBy);
-            databaseHelper.addContact(contract);
+            amount = Double.parseDouble(et_amount.getText().toString());
+            owedTo = sp_owedto.getSelectedItem().toString();
+            owedBy = sp_owedby.getSelectedItem().toString();
+            context = et_context.getText().toString();
+            addContact();
             Toast.makeText(getApplicationContext(), "Contract added", Toast.LENGTH_SHORT).show();
         }
     };
+    // Adding new contact
+    public void addContact() {
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_OWED_BY, owedBy);
+        values.put(COLUMN_OWED_TO, owedTo);
+        values.put(COLUMN_AMOUNT, amount);
+        values.put(COLUMN_CONTEXT, context);
+        long rowInserted = db.insert(TABLE_NAME, null, values);
+        db.close();
+        if (rowInserted != -1)
+            Toast.makeText(getApplicationContext(), "New row added, row id: " + rowInserted, Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getApplicationContext(), "Something wrong", Toast.LENGTH_SHORT).show();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
