@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Runnable</string>
+    <string name="pref_dist">Voorkeurs-Afstand</string>
+    <string name="brand">Merk Loopschoenen</string>
+    <string name="runApp">Favoriete running app</string>
+    <string name="pastGames">Voorbije wedstrijden weekgeven</string>
+    <string name="shoeHint">Asics</string>
+    <string name="date">Datum: </string>
+    <string name="place">Plaats: </string>
+    <string name="price">Prijs: </string>
+    <string name="organisation">Organisatie: </string>
+    <string name="participate">Ik neem deel! </string>
+    <string name="webpage">Webpagina</string>
+    <string-array name="apps">
+        <item>Runkeeper</item>
+        <item>Zombies, Run!</item>
+        <item>Runtastic</item>
+        <item>Strava</item>
+        <item>Nike+ Run Club</item>
+        <item>Couch to 5K</item>
+    </string-array>
+</resources>

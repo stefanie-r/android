@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:id="@+id/tb_distance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_prefDistance"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/pref_dist" />
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/sb_distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:max="5" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tb_shoes"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_shoePrefence"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/brand" />
+
+        <EditText
+            android:id="@+id/et_shoe"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:hint="@string/shoeHint" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_AppPrefence"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/runApp" />
+
+        <Spinner
+            android:id="@+id/sp_app"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:entries="@array/apps" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_pastGames"
+            android:layout_weight="1"
+            android:text="@string/pastGames" />
+
+        <CheckBox
+            android:id="@+id/cb_pastGames"
+            android:layout_weight="1" />
+    </TableRow>
+</TableLayout>

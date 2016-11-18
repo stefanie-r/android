@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:id="@+id/electionType"
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_electionType"
+            android:text="@string/electionType"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"/>
+        <Spinner
+            android:id="@+id/sp_type"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:entries="@array/electionTypes"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_electionYear"
+            android:layout_weight="1"
+            android:text="@string/ElectionYear"
+            android:layout_width="match_parent"/>
+
+        <LinearLayout android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="vertical">
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:max="75"
+                android:id="@+id/sb_electionYear"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/tv_year"/>
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_registeredVoter"
+            android:layout_weight="1"
+            android:text="@string/RegisteredVoter" />
+        <CheckBox
+            android:id="@+id/cb_registeredVoter"
+            android:layout_weight="1"/>
+    </TableRow>
+</TableLayout>
